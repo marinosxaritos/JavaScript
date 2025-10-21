@@ -22,6 +22,15 @@
             }
 
             const emailInput = document.getElementById("email");
+
+            function showHidePassword() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
             
             
             emailInput.addEventListener("input", (e) => {   
