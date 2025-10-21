@@ -7,6 +7,7 @@
                 return  email.replace(emailPart, asterisk.repeat(countEmailPart))
             }  
 
+            let originalEmail = "";
 
             function maskEmailAction() {
                 let emailInput = document.getElementById("email");
@@ -16,6 +17,7 @@
                     alert("Please enter an email first!");
                     return;
                 }
+                originalEmail = emailValue;
                 emailInput.value = maskEmail(emailValue); 
             }
 
@@ -61,10 +63,10 @@
 
             document.getElementById("submitBtn").addEventListener("click", function() {
                 const user = {
-                    email: emailInput.value,
+                    email: originalEmail,
                     password: passwordInput.value,
                     time: timeInput.value,
-                    time: dateInput.value,
+                    date: dateInput.value,
                     phone: telInput.value,
                 };
             
