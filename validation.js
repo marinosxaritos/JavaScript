@@ -10,7 +10,7 @@
             let originalEmail = "";
 
             function maskEmailAction() {
-                let emailInput = document.getElementById("email");
+                //let emailInput = document.getElementById("email");
                 let emailValue = emailInput.value;
 
                 if (emailValue.trim() === "") {
