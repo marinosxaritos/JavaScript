@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> page </title> 
+    </head>
+
+    <body>
+        <header>
+            <h1> FORM </h1>
+            <form action="C:\JS\form\data.html" method="POST">
+                <fieldset>
+                    <legend>Your Information</legend>
+                    <label for="email">EmailAddress:</label>
+                    <input required type="email" id="email" name="email" size="20" placeholder="example@netCompany.com" minlength="3" maxlength="30" pattern=".+@netCompany\.com">
+                    <button type="button" onclick="maskEmailAction()">Mask Email</button><br>
+                    <label for="password"> Password: </label>
+                    <input required type="password" placeholder="Enter your password" id="password" name="password" size="20" minlength="6" maxlength="30"><br>
+                    <label for="age">Age (optional)</label>
+                    <input type="number" id="age" name="age" size="20" placeholder="Your Age" min="3" max="100"><br>
+                    <label for="date">Date (optional)</label>
+                    <input type="date" id="date" name="date" size="20"><br>
+                    <label for="time">Time (optional)</label>
+                    <input type="time" id="time" name="time"><br>
+                    <label for="phone">Phone (optional)</label>
+                    <input type="tel" id="phone" name="phone" size="8" placeholder="Your phone" minlength="8" maxlength="8" pattern="69[0-9]{6}"><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Was this your first time at our System?</legend>
+                    <input checked type="radio" id="yes-option" name="enter-system">
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no-option" name="never-enter-system">
+                    <label for="no">No</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Why did you choose our system?</legend>
+                    <input selected type="checkbox" id="usability" name="usability">
+                    <label for="usability">Usability</label>
+                    <input type="checkbox" id="speed" name="speed">
+                    <label for="speed">Speed</label>
+                    <input checked type="checkbox" id="reputation" name="reputation">
+                    <label for="reputation">Reputation</label>
+                </fieldset>
+
+                <label for="comments">Other Comments?</label><br>
+                <textarea cols="30" rows="7" name="comments" id="comments"></textarea><br>
+
+                <button type="submit" id="submitBtn">Submit form</button>
+                <button type="reset">Reset form</button>
+            </form>
+        </header>
+
+        <script>
+            function maskEmail(email) {
+                let atSignIndex = email.indexOf("@");
+                let emailPart = email.slice(1, atSignIndex -1);
+                let countEmailPart = emailPart.length;
+                let asterisk = "*"
+                return  email.replace(emailPart, asterisk.repeat(countEmailPart))
+            }  
+
+
+            function maskEmailAction() {
+                let emailInput = document.getElementById("email");
+                let emailValue = emailInput.value;
+
+                if (emailValue.trim() === "") {
+                    alert("Please enter an email first!");
+                    return;
+                }
+                emailInput.value = maskEmail(emailValue); 
+            }
+
+            const emailInput = document.getElementById("email");
+            
+            
+            emailInput.addEventListener("input", (e) => {   
+                e.target.setCustomValidity("");
+
+                if (!e.target.value.endsWith("@netCompany.com")) {
+                    e.target.setCustomValidity(
+                        "You must use a company email address that ends in @netCompany.com"
+                    );
+                }
+            });
+
+            const telInput = document.getElementById("phone");
+
+            telInput.addEventListener("input", (e) => {   
+                e.target.setCustomValidity("");
+
+                if (!e.target.value.startsWith("69") || e.target.value.length !== 8) {
+                    e.target.setCustomValidity(
+                        "Your phone Number must start with 69 and must be at total 8 numbers"
+                    );
+                }
+            });
+
+            const passwordInput = document.getElementById("password");
+
+            passwordInput.addEventListener("input", (e) => {   
+                e.target.setCustomValidity("");
+
+                if (e.target.value.length < 6) {
+                    e.target.setCustomValidity(
+                        "You must use a more the 6 characters"
+                    );
+                }
+            });
+
+            const timeInput = document.getElementById("time");
+            const dateInput = document.getElementById("date");
+
+            document.getElementById("submitBtn").addEventListener("click", function() {
+                const user = {
+                    email: emailInput.value,
+                    password: passwordInput.value,
+                    time: timeInput.value,
+                    time: dateInput.value,
+                    phone: telInput.value,
+                };
+            
+
+                const jsonString = JSON.stringify(user, null, 2);
+                console.log(jsonString);
+            });
+
+        </script>
+    </body>
+</html>
