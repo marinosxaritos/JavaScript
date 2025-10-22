@@ -97,9 +97,9 @@
                     phone: telInput.value,
                 };
             
-                let users = JSON.parse(localStorage.getItem('users')) || [];
+                const users = JSON.parse(localStorage.getItem('users')) || [];
 
-                let exists = users.some(u => u.email === user.email);
+                const exists = users.some(u => u.email === user.email);
                 if (exists) {
                     alert("email already exists");
                     return; 
