@@ -86,7 +86,9 @@
             const timeInput = document.getElementById("time");
             
 
-            document.getElementById("form").addEventListener("submit", function() {
+            document.getElementById("form").addEventListener("submit", function(e) {
+                e.preventDefault();
+
                 const user = {
                     email: originalEmail,
                     password: passwordInput.value,
@@ -95,6 +97,17 @@
                     phone: telInput.value,
                 };
             
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+
+                let exists = users.some(u => u.email === user.email);
+                if (exists) {
+                    alert("email already exists");
+                    return; 
+                }
+
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert("Επιτυχής εγγραφή!");
 
                 const jsonString = JSON.stringify(user, null, 2);
                 console.log(jsonString);
@@ -104,6 +117,6 @@
 
                 
             
-        });
+            });
 
         
