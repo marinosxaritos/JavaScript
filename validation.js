@@ -10,9 +10,7 @@
             let originalEmail = "";
 
             function maskEmailAction() {
-                //let emailInput = document.getElementById("email");
                 let emailValue = emailInput.value;
-
                 if (emailValue.trim() === "") {
                     alert("Please enter an email first!");
                     return;
@@ -36,10 +34,28 @@
             emailInput.addEventListener("input", (e) => {   
                 e.target.setCustomValidity("");
 
-                if (!e.target.value.endsWith("@netCompany.com")) {
+                if (!e.target.value.endsWith("@netcompany.com")) {
                     e.target.setCustomValidity(
                         "You must use a company email address that ends in @netCompany.com"
                     );
+                }
+            });
+
+
+            const actualDate = document.getElementById("date");
+            const actual = new Date();
+            actualDate.value = actual.toISOString().split("T")[0]; 
+
+            const dateInput = document.getElementById("date");
+            
+            dateInput.addEventListener("input",(e) => {
+                const selectedDate = new Date(e.target.value);
+                const now = new Date();
+
+                if (selectedDate > now) {
+                    e.target.setCustomValidity("You must select a past date");
+                } else {
+                    e.target.setCustomValidity("");
                 }
             });
 
@@ -68,9 +84,9 @@
             });
 
             const timeInput = document.getElementById("time");
-            const dateInput = document.getElementById("date");
+            
 
-            document.getElementById("submitBtn").addEventListener("click", function() {
+            document.getElementById("form").addEventListener("submit", function() {
                 const user = {
                     email: originalEmail,
                     password: passwordInput.value,
@@ -82,6 +98,12 @@
 
                 const jsonString = JSON.stringify(user, null, 2);
                 console.log(jsonString);
-            });
+
+
+                localStorage.setItem('userData',jsonString);
+
+                
+            
+        });
 
         

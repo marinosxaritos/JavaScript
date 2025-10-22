@@ -8,7 +8,10 @@
     <body>
         <header>
             <h1> FORM </h1>
-            <form action="C:\JS\form\data.html" method="POST">
+            <a href="https://netcompany.com/" target="_blank">
+                <img src="netcompany.png" alt="NetCompany logo">
+            </a>
+            <form action="data.html" method="POST">
                 <fieldset>
                     <legend>Your Information</legend>
                     <label for="email">EmailAddress:</label>
@@ -29,15 +32,15 @@
 
                 <fieldset>
                     <legend>Was this your first time at our System?</legend>
-                    <input checked type="radio" id="yes-option" name="enter-system">
+                    <input checked type="radio" required id="yes-option" name="enter-system">
                     <label for="yes">Yes</label>
-                    <input type="radio" id="no-option" name="never-enter-system">
+                    <input type="radio" id="no-option" name="enter-system">
                     <label for="no">No</label>
                 </fieldset>
 
                 <fieldset>
                     <legend>Why did you choose our system?</legend>
-                    <input selected type="checkbox" id="usability" name="usability">
+                    <input selected type="checkbox" required id="usability" name="usability">
                     <label for="usability">Usability</label>
                     <input type="checkbox" id="speed" name="speed">
                     <label for="speed">Speed</label>
@@ -47,10 +50,21 @@
 
                 <label for="comments">Other Comments?</label><br>
                 <textarea cols="30" rows="7" name="comments" id="comments"></textarea><br>
-
+     
                 <button type="submit" id="submitBtn">Submit form</button>
                 <button type="reset">Reset form</button>
             </form>
+
+            <pre>
+                <code>
+body {
+   color: red;
+}
+                </code>
+            </pre><br>
+
+            <a href="https://www.google.com/search?q=netcompany+stock&rlz=1C1GCEA_enGR1184GR1184&oq=netco&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg8MgYIARBFGDsyBggCEEUYOzIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGD3SAQg0MjU1ajBqMagCALACAQ&sourceid=chrome&ie=UTF-8&sei=a-D3aO-rNNb-7_UPxfSVgAM" target="_blank">BUY OUR STOCK</a>
+
         </header>
 
         <script src="validation.js"></script>
