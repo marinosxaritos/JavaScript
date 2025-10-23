@@ -1,72 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> page </title> 
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>page</title>
+  </head>
 
-    <body>
-        <header>
-            <h1> FORM </h1>
-            <a href="https://netcompany.com/" target="_blank">
-                <img src="netcompany.png" alt="NetCompany logo">
-            </a>
-            <form id="form" action="data.html" method="POST">
-                <fieldset>
-                    <legend>Your Information</legend>
-                    <label for="email">EmailAddress:</label>
-                    <input required type="email" id="email" name="email" size="20" placeholder="example@netcompany.com" minlength="3" maxlength="30" pattern=".+@netcompany\.com">
-                    <button type="button" onclick="maskEmailAction()">Mask Email</button><br>
-                    <label for="password"> Password: </label>
-                    <input required type="password" placeholder="Enter your password" id="password" name="password" size="20" minlength="6" maxlength="30">
-                    <input type="checkbox" onclick="showHidePassword()"><br>
-                    <label for="age">Age (optional)</label>
-                    <input type="number" id="age" name="age" size="20" placeholder="Your Age" min="3" max="100"><br>
-                    <label for="date">Date (optional)</label>
-                    <input type="date" id="date" name="date" size="20"><br>
-                    <label for="time">Time (optional)</label>
-                    <input type="time" id="time" name="time"><br>
-                    <label for="phone">Phone (optional)</label>
-                    <input type="tel" id="phone" name="phone" size="8" placeholder="Your phone" minlength="8" maxlength="8" pattern="69[0-9]{6}"><br>
-                </fieldset>
+  <body>
+    <header>
+      <h1>FORM</h1>
+      <a
+        href="https://en.wikipedia.org/wiki/Make_It_Happen_(Mariah_Carey_song)"
+        target="_blank"
+      >
+        <img src="makeItHappen.jpg" alt="NetCompany logo" />
+      </a>
+      
+    </header>
+    <form id="form" action="data.html" method="POST">
+        <fieldset>
+          <legend>Your Information</legend>
+          <label for="email">EmailAddress:</label>
+          <input
+            required
+            type="email"
+            id="email"
+            name="email"
+            size="20"
+            placeholder="example@makeithappen.com"
+            minlength="3"
+            maxlength="30"
+            pattern=".+@makeithappen\.com"
+          />
+          <button type="button" onclick="maskEmailAction()">Mask Email</button
+          ><br />
+          <label for="password"> Password: </label>
+          <input
+            required
+            type="password"
+            placeholder="Enter your password"
+            id="password"
+            name="password"
+            size="20"
+            minlength="6"
+            maxlength="30"
+          />
+          <input type="checkbox" onclick="showHidePassword()" /><br />
+          <label for="age">Age (optional)</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            size="20"
+            placeholder="Your Age"
+            min="3"
+            max="100"
+          /><br />
+          <label for="date">Date (optional)</label>
+          <input type="date" id="date" name="date" size="20" /><br />
+          <label for="time">Time (optional)</label>
+          <input type="time" id="time" name="time" /><br />
+          <label for="phone">Phone (optional)</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            size="8"
+            placeholder="Your phone"
+            minlength="8"
+            maxlength="8"
+            pattern="69[0-9]{6}"
+          /><br />
+        </fieldset>
 
-                <fieldset>
-                    <legend>Was this your first time at our System?</legend>
-                    <input checked type="radio" required id="yes-option" name="enter-system">
-                    <label for="yes">Yes</label>
-                    <input type="radio" id="no-option" name="enter-system">
-                    <label for="no">No</label>
-                </fieldset>
+        <fieldset>
+          <legend>Was this your first time at our System?</legend>
+          <input
+            checked
+            type="radio"
+            required
+            id="yes-option"
+            name="enter-system"
+          />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no-option" name="enter-system" />
+          <label for="no">No</label>
+        </fieldset>
 
-                <fieldset>
-                    <legend>Why did you choose our system?</legend>
-                    <input selected type="checkbox" required id="usability" name="usability">
-                    <label for="usability">Usability</label>
-                    <input type="checkbox" id="speed" name="speed">
-                    <label for="speed">Speed</label>
-                    <input checked type="checkbox" id="reputation" name="reputation">
-                    <label for="reputation">Reputation</label>
-                </fieldset>
+        <fieldset>
+          <legend>Why did you choose our system?</legend>
+          <input
+            selected
+            type="checkbox"
+            required
+            id="usability"
+            name="usability"
+          />
+          <label for="usability">Usability</label>
+          <input type="checkbox" id="speed" name="speed" />
+          <label for="speed">Speed</label>
+          <input checked type="checkbox" id="reputation" name="reputation" />
+          <label for="reputation">Reputation</label>
+        </fieldset>
 
-                <label for="comments">Other Comments?</label><br>
-                <textarea cols="30" rows="7" name="comments" id="comments"></textarea><br>
-     
-                <button type="submit" id="submitBtn">Submit form</button>
-                <button type="reset">Reset form</button>
-            </form>
+        <label for="comments">Other Comments?</label><br />
+        <textarea cols="30" rows="7" name="comments" id="comments"></textarea
+        ><br />
 
-            <pre>
-                <code>
-body {
-   color: red;
-}
-                </code>
-            </pre><br>
-
-            <a href="https://www.google.com/search?q=netcompany+stock&rlz=1C1GCEA_enGR1184GR1184&oq=netco&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg8MgYIARBFGDsyBggCEEUYOzIGCAMQRRg5MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGD3SAQg0MjU1ajBqMagCALACAQ&sourceid=chrome&ie=UTF-8&sei=a-D3aO-rNNb-7_UPxfSVgAM" target="_blank">BUY OUR STOCK</a>
-
-        </header>
-
-        <script src="validation.js"></script>
-    </body>
+        <button type="submit" id="submitBtn">Submit form</button>
+        <button type="reset">Reset form</button>
+    </form>
+    <script src="validation.js"></script>
+  </body>
 </html>
