@@ -16,7 +16,7 @@
       </a>
       
     </header>
-    <form id="form" action="data.html" method="POST">
+    <form id="form" action="data.html">
         <fieldset>
           <legend>Your Information</legend>
           <label for="email">EmailAddress:</label>
@@ -31,8 +31,9 @@
             maxlength="30"
             pattern=".+@makeithappen\.com"
           />
-          <button type="button" onclick="maskEmailAction()">Mask Email</button
-          ><br />
+          
+          <button type="button" id="maskEmailBtn">Mask Email</button><br />
+          
           <label for="password"> Password: </label>
           <input
             required
@@ -44,7 +45,9 @@
             minlength="6"
             maxlength="30"
           />
-          <input type="checkbox" onclick="showHidePassword()" /><br />
+          
+          <input type="checkbox" id="showPasswordCheckbox" /><br />
+          
           <label for="age">Age (optional)</label>
           <input
             type="number"
@@ -55,10 +58,13 @@
             min="3"
             max="100"
           /><br />
+          
           <label for="date">Date (optional)</label>
           <input type="date" id="date" name="date" size="20" /><br />
+          
           <label for="time">Time (optional)</label>
           <input type="time" id="time" name="time" /><br />
+          
           <label for="phone">Phone (optional)</label>
           <input
             type="tel"
@@ -72,6 +78,7 @@
           /><br />
         </fieldset>
 
+        
         <fieldset>
           <legend>Was this your first time at our System?</legend>
           <input
@@ -103,12 +110,13 @@
         </fieldset>
 
         <label for="comments">Other Comments?</label><br />
-        <textarea cols="30" rows="7" name="comments" id="comments"></textarea
-        ><br />
+        <textarea cols="30" rows="7" name="comments" id="comments"></textarea><br />
 
         <button type="submit" id="submitBtn">Submit form</button>
         <button type="reset">Reset form</button>
     </form>
-    <script src="validation.js"></script>
+    
+    
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
