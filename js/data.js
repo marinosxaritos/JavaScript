@@ -2,14 +2,14 @@ import { getUsersFromStorage, getUserDataFromStorage } from './storage.js';
 
 export function displayUserData() {
   const users = getUsersFromStorage();
-  const userData = getUserDataFromStorage();
+  const lastUser = getUserDataFromStorage();
   const userInfoDiv = document.getElementById("userInfo");
   
   userInfoDiv.innerHTML = `
     <h3>Όλοι οι Χρήστες:</h3>
     <pre>${JSON.stringify(users, null, 2)}</pre>
     <h3>Τελευταίος Χρήστης:</h3>
-    <pre>${JSON.stringify(userData, null, 2)}</pre>
+    <pre>${JSON.stringify(lastUser, null, 2)}</pre>
   `;
 }
 

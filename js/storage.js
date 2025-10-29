@@ -3,12 +3,15 @@ export function saveUserToStorage(user) {
   
   const exists = users.some((u) => u.email === user.email);
   if (exists) {
-    throw new Error("Email already exists");
-  }
+    alert("Email already exists");
+    setTimeout(() => {
+        window.location.href = 'data.html';
+    }, 1000); 
+    return;
+}
 
   users.push(user);
   localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("userData", JSON.stringify(user, null, 2));
   
   return user;
 }
@@ -18,22 +21,21 @@ export function getUsersFromStorage() {
 }
 
 export function getUserDataFromStorage() {
-  return JSON.parse(localStorage.getItem("userData"));
+  const users = getUsersFromStorage();
+  return users.length > 0 ? users[users.length - 1] : null;
 }
 
 export function loadFormData() {
-  const userData = getUserDataFromStorage();
-  if (!userData) return;
+  const lastUser = getUserDataFromStorage();
+  if (!lastUser) return;
 
   const form = document.getElementById('form');
   if (!form) return;
 
-  Object.keys(userData).forEach(key => {
+  Object.keys(lastUser).forEach(key => {
     const field = form.elements[key];
     if (field) {
-      field.value = userData[key];
+      field.value = lastUser[key];
     }
   });
-
-  console.log('Τα δεδομένα φορτώθηκαν αυτόματα');
 }

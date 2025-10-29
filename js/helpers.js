@@ -1,9 +1,9 @@
 
 export function maskEmail(email) {
-  let atSignIndex = email.indexOf("@");
-  let emailPart = email.slice(1, atSignIndex - 1);
-  let countEmailPart = emailPart.length;
-  let asterisk = "*";
+  const atSignIndex = email.indexOf("@");
+  const emailPart = email.slice(1, atSignIndex - 1);
+  const countEmailPart = emailPart.length;
+  const asterisk = "*";
   return email.replace(emailPart, asterisk.repeat(countEmailPart));
 }
 
