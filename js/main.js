@@ -11,7 +11,10 @@ import {
   setupPhoneValidation
 } from './validation.js';                    
 
-import { saveUserToStorage } from './storage.js';  
+import { 
+  saveUserToStorage,
+  loadFormData
+} from './storage.js';  
 
 
 const emailInput = document.getElementById("email");
@@ -25,6 +28,7 @@ function initializeApp() {
 
   setupCurrentDate(dateInput);
   
+  loadFormData();
   
   const maskButton = document.getElementById("maskEmailBtn");
   maskButton.addEventListener('click', () => maskEmailAction(emailInput));
@@ -44,8 +48,8 @@ function initializeApp() {
 
 function handleFormSubmit(e) {
   
-  
   const { email, password, phone, date, time } = e.target.elements;
+  console.log(e.target);
 
   const user = {
     email: email.value,

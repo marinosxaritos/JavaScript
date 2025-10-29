@@ -21,7 +21,19 @@ export function getUserDataFromStorage() {
   return JSON.parse(localStorage.getItem("userData"));
 }
 
-// export function clearUserStorage() {
-//   localStorage.removeItem("users");
-//   localStorage.removeItem("userData");
-// }
+export function loadFormData() {
+  const userData = getUserDataFromStorage();
+  if (!userData) return;
+
+  const form = document.getElementById('form');
+  if (!form) return;
+
+  Object.keys(userData).forEach(key => {
+    const field = form.elements[key];
+    if (field) {
+      field.value = userData[key];
+    }
+  });
+
+  console.log('Τα δεδομένα φορτώθηκαν αυτόματα');
+}
