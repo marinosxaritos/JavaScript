@@ -44,7 +44,7 @@ fieldset {
 
 .field-row {
   outline: 1px solid;
-  width: 80%;
+  width: 70%;
   
   border-radius: 12px;
   margin: auto;
@@ -52,19 +52,25 @@ fieldset {
 }
 
 .field-input {
+  display: flex;
+  flex-direction: row;
   padding: 0em 0em;
   max-width: 100%;
 }
 
+.field-input-checkbox {
+  gap: 1rem;
+}
+
 .input-box {
-    width: 70%;
+    width: 75%;
     border-radius: 10px;
   }
 
 
 .span-field-row {
   outline: 1px solid;
-  width: 80%;
+  width: 70%;
   border-radius: 12px;
   margin: auto;
   padding: 1.5em;
@@ -75,10 +81,7 @@ fieldset {
   max-width: 20%;
 }
 
-.input-box {
-    width: 70%;
-    border-radius: 10px;
-  }
+
 
 
 
@@ -87,7 +90,7 @@ fieldset {
   flex-direction: column;
   max-width: 30%;
   padding: 0;
-  padding-right: 10em;
+  padding-right: 45%;
   float: right;
 }
 
@@ -119,7 +122,7 @@ input[type=number]{
 .button-box {
   
   display: flex;
-  width: 30%;
+  width: 25%;
   gap: 1.5rem;
   margin: auto;
   padding: 0 ;
