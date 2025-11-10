@@ -22,12 +22,12 @@ input, textarea, select, button {
 
 body {
   font-family: "neue-montreal-medium", sans-serif;
-
+  background-color: oklch(0.331 0.012 279.2);
+  color: oklch(0.930 0.001 197.1);
 }
 
 h1 {
-  
-  padding: 0em 35%;
+  padding: 0em 27%;
   max-width: 80%;
   margin: auto;
 }
@@ -40,6 +40,7 @@ fieldset {
   border-radius: 12px;
   padding: 0.35em;
   border: none;
+  
 }
 
 .field-row {
@@ -178,7 +179,7 @@ input[type=number]{
   
   .button-box {
     flex-direction: column;
-    width: 70%;
+    width: 62%;
     gap: 1em;
   }
   

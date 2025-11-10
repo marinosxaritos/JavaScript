@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "neue-montreal-medium";
+    src: url("fonts/NeueMontreal-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+:root {
+    font-size: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
