@@ -15,7 +15,7 @@
         <fieldset class="fieldset-box">
           <div class="field-row">
             <label for="email"> EmailAddress </label>
-            <div class="field-input">
+            <div class=" field-input-emailBtn">
               <input
                 required
                 type="email"
@@ -34,10 +34,10 @@
         </fieldset>
 
 
-        <fieldset>
+        <fieldset class="fieldset-box">
           <div class="field-row">
             <label for="password"> Password </label>
-            <div class="field-input field-input-checkbox">
+            <div class="field-input-checkbox">
               <input
                 required
                 type="password"
@@ -54,12 +54,10 @@
           </div>
         </fieldset>
 
-
-        <fieldset>
-          <div class="span-field-row">
-            <div class="span-field-input-float">  
+        <div class="container">
+        <fieldset class="fieldset-box">
+            <div class="span-field-row">
               <label for="phone"> Phone </label>
-              <span class="field-input">
                 <input
                   type="tel"
                   id="phone"
@@ -71,12 +69,12 @@
                   pattern="69[0-9]{6}"  
                   class="input-box"               
                 />
-              </span>
             </div>
-        
-            <div class="span-field-input">
-              <label for="age">Age</label>
-                <span class="field-input">
+            </fieldset>
+                        
+            <fieldset class="fieldset-box-sec-element">
+            <div class="span-field-row">
+              <label for="age">Age</label>   
                   <input
                     type="number"
                     id="age"
@@ -86,18 +84,15 @@
                     min="3"
                     max="100"       
                     class="input-box"        
-                  />
-                </span>
+                  />     
             </div>
-          </div>
         </fieldset>
-
-
-        <fieldset>
-          <div class="span-field-row">
-            <div class="span-field-input-float">
+        </div>
+        
+      <div class="container">
+        <fieldset class="fieldset-box">
+          <div class="span-field-row">  
             <label for="date">Date</label>
-              <span class="field-input">
                 <input 
                   type="date"
                   id="date" 
@@ -105,28 +100,33 @@
                   size="20" 
                   class="input-box"
                   />
-              </span>
-            </div>
-          
-            <div class="span-field-input">
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset-box-sec-element">
+          <div class="span-field-row"> 
               <label for="time">Time</label>
-                <span class="field-input">
                   <input 
                     type="time"
                     id="time"
                     name="time" 
                     class="input-box"
-                    />
-                </span>   
-            </div>
+                    />  
           </div>
         </fieldset>
+        </div>
 
         <div class="button-box">
           <button type="submit" id="submitBtn">Submit form</button>
           <button type="reset" id="resetBtn">Reset form</button>
         </div>
       </form>
+      <aside>
+        <div id="jokeContainer">
+          <p id="loadingJoke">------</p>
+        </div>
+        <button id="loadJokeBtn">PUSH</button>
+      </aside>
     </main>
     <script type="module" src="./js/main.js"></script>
   </body>

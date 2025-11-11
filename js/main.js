@@ -16,6 +16,8 @@ import {
   loadFormData
 } from './storage.js';  
 
+import { loadJoke } from './apiService.js';
+
 
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
@@ -44,6 +46,8 @@ function initializeApp() {
   setupPhoneValidation(telInput);
   
   form.addEventListener("submit", handleFormSubmit);
+
+  document.getElementById('loadJokeBtn').addEventListener("click", loadJoke);
 }
 
 function handleFormSubmit(e) {
@@ -67,6 +71,5 @@ function handleFormSubmit(e) {
     alert(error.message);
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', initializeApp);
